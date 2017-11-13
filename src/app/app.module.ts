@@ -3,12 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { StoreModule } from '@ngrx/store';
+
+import { AppReducer } from './../redux/app.reducer';
+import { CounterComponent } from './counter/counter.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CounterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot( AppReducer )
   ],
   providers: [],
   bootstrap: [AppComponent]
